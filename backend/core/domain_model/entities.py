@@ -47,3 +47,8 @@ class Batch:
         if other.eta is None:
             return True
         return self.eta > other.eta
+
+    def __eq__(self, other):
+        if not isinstance(other, Batch):
+            return False
+        return other.reference == self.reference
